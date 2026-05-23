@@ -1,64 +1,169 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Java简历自动生成器 - 2026版</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>面试复盘模板市场 | 飞书·Notion·Markdown | Java面试通关</title>
+<meta name="description" content="面试完复盘才是拉开差距的关键。5套面试复盘模板（飞书/Notion/Markdown），免费下载基础版，赞赏¥9.9解锁完整版含评分体系+弱点追踪。">
+<meta name="keywords" content="面试复盘模板,面试复盘表格,Notion面试模板,飞书面试模板,Java面试复盘,面试失败分析">
 <style>
-body{max-width:700px;margin:20px auto;font-family:Arial,sans-serif;padding:20px}
-label{display:block;margin:8px 0 2px;font-weight:bold}
-input,textarea{width:100%;padding:8px;margin-bottom:12px;border:1px solid #ddd;border-radius:4px}
-button{background:#2563eb;color:white;border:none;padding:12px 24px;border-radius:6px;cursor:pointer;font-size:16px}
-pre{background:#f5f5f5;padding:12px;border-radius:4px;white-space:pre-wrap;font-size:13px}
-.ad{text-align:center;margin:16px 0;color:#666}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8;padding:20px}
+.container{max-width:800px;margin:0 auto}
+h1{font-size:1.8em;color:#38bdf8;margin:20px 0 10px;text-align:center}
+.meta{text-align:center;color:#94a3b8;margin-bottom:30px}
+.card{background:#1e293b;border-radius:16px;padding:24px;margin:20px 0;border:1px solid #334155}
+.card.free{border-left:4px solid #4ade80}
+.card.pro{border-left:4px solid #facc15;background:linear-gradient(135deg,#1e293b,#1a1f35)}
+.card h2{color:#facc15;margin-bottom:8px}
+.card .price{font-size:1.5em;color:#38bdf8;font-weight:bold;margin:10px 0}
+.card .price small{font-size:0.6em;color:#94a3b8}
+.features{list-style:none;margin:12px 0}
+.features li{padding:6px 0;color:#e2e8f0}
+.features li::before{content:"✓ ";color:#4ade80}
+.features li.extra::before{content:"✦ ";color:#facc15}
+.btn{display:inline-block;padding:12px 28px;border-radius:30px;font-weight:bold;text-decoration:none;transition:all .3s;cursor:pointer}
+.btn-free{background:#4ade80;color:#0f172a}
+.btn-pro{background:#facc15;color:#0f172a}
+.btn:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(56,189,248,0.3)}
+.donate{text-align:center;margin:40px 0;padding:24px;background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:16px;border:2px solid #facc15}
+.nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:30px 0}
+.nav a{background:#1e293b;color:#94a3b8;padding:6px 14px;border-radius:20px;text-decoration:none;font-size:0.85em;transition:all .2s}
+.nav a:hover{background:#38bdf8;color:#0f172a}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:#1e293b;border-radius:12px;padding:20px;text-align:center}
+.compare-box.pro{background:#1a1f35;border:2px solid #facc15}
+.compare-box h3{color:#facc15;margin-bottom:8px}
+hr{border-color:#334155;margin:20px 0}
 </style>
 </head>
 <body>
-<h2>📝 Java实习简历自动生成器</h2>
-<p>填信息→一键导出专业简历</p>
+<div class="container">
 
-<label>姓名</label><input id="name" placeholder="张三">
-<label>学校</label><input id="school" placeholder="XX大学 软件工程 2026届">
-<label>电话</label><input id="phone" placeholder="138xxxx">
-<label>邮箱</label><input id="email" placeholder="your@email.com">
-<label>项目一</label><textarea id="proj1" rows="3">Spring Boot 3 + Spring AI + Redis 构建的RAG智能知识库系统，支持文档上传、智能问答。Docker部署上线。</textarea>
-<label>项目二</label><textarea id="proj2" rows="3">Spring Cloud Alibaba微服务秒杀系统，Redis Lua原子库存扣减+MQ异步削峰，QPS 5000+。</textarea>
-<label>技术栈</label><input id="skills" value="Java, Spring Boot, MyBatis, MySQL, Redis, Docker, Git, Linux">
-<label>Github</label><input id="github" placeholder="github.com/你的用户名">
+<h1>📋 面试复盘模板市场</h1>
+<p class="meta">5套专业模板 · 飞书/Notion/Markdown · 面试完花10分钟复盘，下次通过率翻倍</p>
 
-<button onclick="generate()">生成简历 → 打印/保存PDF</button>
+<div class="nav">
+<a href="../java-career-blog/">📚 全部文章</a>
+<a href="../arsenal/">🎯 弹药库</a>
+<a href="../shop/">🛒 装备商店</a>
+</div>
 
-<div class="ad">☕ 这个工具免费。如果帮到你了，请杯咖啡👇<br><img src="qrcode.png" width="150" style="margin:8px"><br>更多免费工具：<a href="https://Abyte-zym.github.io/java-interview-quiz/">面试题库</a> | <a href="https://github.com/Abyte-zym/job-market-report">岗位分析</a></div>
+<div class="compare">
+<div class="compare-box">
+<h3>🆓 免费版</h3>
+<div class="price">¥0</div>
+<ul class="features">
+<li>基础复盘表（Markdown）</li>
+<li>面试时间线记录</li>
+<li>被问问题清单</li>
+<li>回答自评（3级）</li>
+</ul>
+<a class="btn btn-free" href="#" onclick="alert('免费模板下载链接将通过GitHub Releases发布，敬请关注！')">免费下载</a>
+</div>
+<div class="compare-box pro">
+<h3>⭐ 完整版</h3>
+<div class="price">¥9.9 <small>赞赏解锁</small></div>
+<ul class="features">
+<li>5套模板全格式</li>
+<li>7维评分体系</li>
+<li>弱点自动追踪</li>
+<li>30天进步曲线</li>
+<li>面试官风格分析</li>
+<li>飞书/Notion/Excel</li>
+<li>每月更新新模板</li>
+</ul>
+<a class="btn btn-pro" href="#" onclick="document.getElementById('donate').scrollIntoView({behavior:'smooth'})">赞赏¥9.9解锁</a>
+</div>
+</div>
 
-<pre id="output" style="display:none"></pre>
+<h2 style="color:#facc15;margin-top:30px">📦 5套复盘模板一览</h2>
 
-<script>
-function generate(){
-document.getElementById('output').style.display='block';
-document.getElementById('output').innerHTML=`
-┌──────────────────────────────────────┐
-│  `+document.getElementById('name').value+` │ `+document.getElementById('phone').value+` │ `+document.getElementById('email').value+`
-│  GitHub: `+document.getElementById('github').value+`
-└──────────────────────────────────────┘
+<div class="card free">
+<h2>模板1：单场面试快速复盘表</h2>
+<p style="color:#94a3b8">面试完10分钟填完，抓核心问题</p>
+<ul class="features">
+<li>公司/岗位/轮次基本信息</li>
+<li>被问问题清单（技术+HR）</li>
+<li>每道题自评（👍还行 / 😐卡壳 / 👎完全不会）</li>
+<li>面试整体感受（1-5分）</li>
+<li>下一次改进优先级（一句话）</li>
+</ul>
+<p style="color:#64748b;font-size:0.8em">格式：Markdown | 免费</p>
+</div>
 
-【求职意向】Java后端开发实习生 | 可随时到岗
+<div class="card pro">
+<h2>模板2：7维深度复盘表</h2>
+<p style="color:#94a3b8">每场面试打7个维度分，追踪弱项</p>
+<ul class="features">
+<li>技术深度 · 表达能力 · 项目理解 · 算法 · 系统设计 · HR问答 · 反问质量</li>
+<li>每维1-10分，自动计算总分</li>
+<li>弱项自动标红，下次优先补</li>
+<li>30天内多场面试对比曲线</li>
+</ul>
+<p style="color:#facc15;font-size:0.8em">格式：Notion数据库 + 飞书多维表格 | Pro</p>
+</div>
 
-【教育背景】
-`+document.getElementById('school').value+`
+<div class="card pro">
+<h2>模板3：面试官风格分析表</h2>
+<p style="color:#94a3b8">同一个面试官第二次面，知己知彼</p>
+<ul class="features">
+<li>面试官追问风格（深挖到底 / 点到为止 / 跳跃发散）</li>
+<li>最关心哪类问题（项目 > 算法 > 基础）</li>
+<li>上次踩了哪些坑</li>
+<li>这次该怎么调整策略</li>
+</ul>
+<p style="color:#facc15;font-size:0.8em">格式：飞书文档 | Pro</p>
+</div>
 
-【技术栈】
-`+document.getElementById('skills').value+`
+<div class="card pro">
+<h2>模板4：面试时间线全景图</h2>
+<p style="color:#94a3b8">从投递到Offer的全链路追踪</p>
+<ul class="features">
+<li>投递日期 → HR联系 → 一面 → 二面 → Offer</li>
+<li>每阶段耗时统计（知道哪家效率高）</li>
+<li>同时管理20+公司的面试进度</li>
+<li>防止漏跟进、防撞车</li>
+</ul>
+<p style="color:#facc15;font-size:0.8em">格式：飞书多维表格 + 甘特图 | Pro</p>
+</div>
 
-【项目经历】
-█ `+document.getElementById('proj1').value+`
+<div class="card pro">
+<h2>模板5：面试失败根因分析表</h2>
+<p style="color:#94a3b8">挂了不可怕，不知道挂在哪才可怕</p>
+<ul class="features">
+<li>根因分类（技术不够 / 表达不清 / 岗位不匹配 / 学历硬伤 / 薪资谈崩 / 运气）</li>
+<li>每场挂掉的根因归类</li>
+<li>高频根因自动统计</li>
+<li>针对每类根因的改进计划</li>
+</ul>
+<p style="color:#facc15;font-size:0.8em">格式：Excel + Notion双版本 | Pro</p>
+</div>
 
-█ `+document.getElementById('proj2').value+`
+<h2>🎯 为什么需要复盘模板？</h2>
+<div class="timeline" style="background:#1e293b;border-radius:12px;padding:24px;margin:20px 0;border-left:4px solid #38bdf8">
+<p>❌ <strong>不复盘的人：</strong>面了10场，同样的错犯了10次，不知道为什么挂。</p>
+<p style="margin-top:12px">✅ <strong>用模板复盘的人：</strong>面完第3场就知道自己是"算法薄弱+项目表达不清晰"，针对性补了两周，第5场拿Offer。</p>
+</div>
 
-【竞赛亮点】AIGC全国三等奖 | 数学建模省一等奖
+<div class="donate" id="donate">
+<p>☕ 赞赏 ¥9.9 解锁全部5套模板</p>
+<p style="color:#94a3b8;font-size:0.9em">赞赏后截图发GitHub Issue，24h内发送模板链接</p>
+<p style="font-size:0.8em;color:#64748b">包含飞书·Notion·Markdown·Excel四种格式</p>
+</div>
 
----
-💡 Ctrl+P 打印 → 另存为PDF → 简历到手！
-`;
-}
-</script>
+<div class="nav">
+<a href="../java-career-blog/">📚 全部文章</a>
+<a href="../arsenal/">🎯 弹药库</a>
+<a href="../shop/">🛒 装备商店</a>
+<a href="../interview-followup-thankyou-2026.html">📩 感谢信模板</a>
+</div>
+
+<div style="text-align:center;margin-top:40px">
+<p style="color:#64748b;font-size:0.8em">© 2026 Abyte-zym · GitHub Pages</p>
+</div>
+
+</div>
 </body>
 </html>
